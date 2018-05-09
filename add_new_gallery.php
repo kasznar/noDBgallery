@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
+        header('Location: gallery-login.php');    
+}
+
+
 	$dateStr = date("Ymd_his");
 	$new_gallery_name = trim($_POST['posted_gallery_name']);
 	$path = 'galleries/'.$dateStr."_".$new_gallery_name;

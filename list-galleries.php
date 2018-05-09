@@ -1,4 +1,10 @@
 <?php
+
+session_start();
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
+        header('Location: gallery-login.php');    
+}
+
 	$oddRow = true;
 	$dir    = 'galleries';
 	$files = scandir($dir,1);

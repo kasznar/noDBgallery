@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
+        header('Location: gallery-login.php');    
+}
 
 function webresize($image_to_resize,$name,$w,$dir) {
 //Get Image Resource Id for Source Image 

@@ -1,12 +1,9 @@
 <?php
 session_start();
-
-
-/*
 if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
-        header('Location: gallery-generator-login.php');
+        header('Location: gallery-login.php');    
 }
-*/
+
 
 $this_gallery_folder_name = trim($_POST['gallery_folder_name']);
 

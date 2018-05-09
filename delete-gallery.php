@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
+        header('Location: gallery-login.php');    
+}
+
 function delete_directory($dirname) {
 	if (is_dir($dirname))
 		$dir_handle = opendir($dirname);

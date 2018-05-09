@@ -1,12 +1,8 @@
 <?php
 session_start();
-
-
-/*
 if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
-        header('Location: gallery-generator-login.php');
+        header('Location: gallery-login.php');    
 }
-*/
 
 $this_img_path = trim($_POST['img_to_delete']);
 unlink($this_img_path);
