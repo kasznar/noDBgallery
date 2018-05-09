@@ -3,7 +3,7 @@
 	$dir    = 'galleries';
 	$files = scandir($dir,1);
 
-	array_splice($files, -2, 2);
+	array_splice($files, -3, 3);
 
 	foreach ($files as $gallery_folder_name) {
 		if($oddRow){
