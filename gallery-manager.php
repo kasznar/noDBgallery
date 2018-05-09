@@ -27,12 +27,13 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
 </div> <!--add image overlay -->
 
 
-
 <div class="wrapper">
 	<div class="header">
 		<input type="text" id="newGalleryName">
 		<button type="button" id="newGalleryButton">New Gallery!</button>
 	</div>
+	
+	<center>ctrl click images to select</center>
 
 	<div class="gallery-list-container">
 

@@ -17,11 +17,14 @@ array_splice($images, 0, 2); //leszedi az első három elemet amik nem kellenek 
 
 foreach ($images as $curimage) {
     $id = substr($curimage, 0, -4);
-	$txt = '
+	$txt = '<img src="'.$dirname.$curimage.'" alt="Fjords" width="100" height="100" id="'.$id.'" class="image">';   
+/*
+    $txt = '
 	<div class="gallery">
     		<img src="'.$dirname.$curimage.'" alt="Fjords" width="100" height="100" id="'.$id.'" class="image">
 	</div>
     ';   
+*/
     echo $txt;  
 }
 
