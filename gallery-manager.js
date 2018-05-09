@@ -4,7 +4,6 @@ function listGalleries() {
     }); //list galleries from galleries folder
 }
 
-
 function listGalleryImages(this_gallery_folder_name){
 	$.post('list-gallery-images.php',{
 		gallery_folder_name: this_gallery_folder_name
@@ -12,7 +11,6 @@ function listGalleryImages(this_gallery_folder_name){
 		$(".gallery-images."+this_gallery_folder_name).html(data);
 	});
 }
-
 
 function ajaxUploadHandler(gallery_id){
 
@@ -25,27 +23,37 @@ function ajaxUploadHandler(gallery_id){
   		// Get the selected files from the input.
 		var files = fileSelect.files;
 		var file = files[0];
-		console.log(file);
 		// Create a new FormData object.
 		var formData = new FormData();
 		formData.append('fileToUpload', file, file.name);
 		formData.append('galleryID', gallery_id);
 		var xhr = new XMLHttpRequest();
-		xhr.open('POST', 'upload.php', true);
 		xhr.onload = function () {
   			if (xhr.status === 200) {
    			 // File(s) uploaded.
-   			 console.log('feltöltött');
+   			 console.log('uploaded');
    			 listGalleryImages(gallery_id);
   			} else {
-   			 console.log('megmurdelt');
+   			 console.log('something went wrong whit the upload :(');
   			}
 		};
+		xhr.open('POST', 'upload.php', true);
 		xhr.send(formData);
+		listGalleryImages(gallery_id);
 	}
 }
 
+function deleteGallery(this_gallery_to_delete){
+	$.post('delete-gallery.php',{
+		gallery_to_delete: this_gallery_to_delete
+	}, function(data){
+		console.log(data);
+	});
+}
 
+function removeDeletedGallery(this_gallery_to_remove){
+	$(".gallery-wrapper."+this_gallery_to_remove).hide();
+}
 
 $(document).ready(function(){
 	listGalleries();
@@ -57,6 +65,11 @@ $(document).ready(function(){
         listGalleryImages(this_gallery_id);
         $(".gallery-container."+this_gallery_id).slideToggle(); //the slide down has the ID as a CLASS
         ajaxUploadHandler(this_gallery_id);
+        $('.delete-button').click(function(){
+    		var toDelete = $(this).attr('id').substring(8);
+    		deleteGallery(toDelete);
+    		removeDeletedGallery(toDelete);
+    	});
     }); //click on gallery
 
     $('#newGalleryButton').click(function(){
@@ -68,6 +81,7 @@ $(document).ready(function(){
 			listGalleries();
 		});
     }); /*new gallery button clicked*/
+
 });/*document ready*/
 
 
