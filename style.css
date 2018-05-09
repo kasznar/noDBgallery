@@ -1,0 +1,82 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Open Sans', sans-serif;
+	overflow-y:scroll;
+}
+.gallery-list-container{
+	display: inline-block;
+	padding: 60px 0px 30px 0px;
+	width: 50%;
+	text-align: left;
+	}
+.overlay{
+	background-color: grey;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display:none;
+}
+.add-image-container{
+	display: inline-block;
+	padding: 60px 0px 30px 0px;
+	width: 50%;
+	text-align: left;
+	}
+.wrapper{
+	text-align: center;
+}
+.header{
+	font-size: 30px;
+	background-color: #3F51B5;
+}
+.galleries{
+	padding: 10px 5px 10px 25px;
+	margin: 3px 0px 0px 0px; 
+	background-color: red;
+	color: white;
+}
+.oddRow{
+	background-color: #01579B;
+}
+.evenRow{
+	background-color: #0277BD;
+}
+.gallery-controls{
+	background-color: #B0BEC5;
+	padding: 10px 5px 10px 25px;
+	margin: 0px 0px 0px 0px;
+}
+
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0,0,0,0.58);
+	-moz-box-shadow: 0px 0px 13px 2px rgba(0,0,0,0.58);
+	box-shadow: 0px 0px 13px 2px rgba(0,0,0,0.58);
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+.gallery-images{
+	overflow: auto;
+}
+
+.gallery-container{
+	overflow: auto;
+	display: none;
+	background-color: #ECEFF1;
+}
