@@ -21,7 +21,8 @@ PHP limits the file upload size to 2mb by default.
 
 ## Future enhancements
 Well, a lot
-*reasonable UI
-*Upload multiple files
-*full size image view
-*etc
+- reasonable UI
+- Upload multiple files
+- full size image view
+- support other formats than JPEG
+- etc
