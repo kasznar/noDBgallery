@@ -24,7 +24,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
 		$oddRow = !$oddRow;
 
 		$wrapper = "<div class='gallery-wrapper ".$gallery_folder_name."'>";
-			$row = "<div class='galleries ".$rowClass."' id='".$gallery_folder_name."'>".$gallery_name."</div>";
+			$row = "<div class='galleries ".$rowClass."' id='".$gallery_folder_name."'>".$gallery_folder_name."</div>";
 			$container = "<div class='gallery-container ".$gallery_folder_name."'>";
 			$controls = "<div class='gallery-controls ".$gallery_folder_name."'></div>";
 			$delete_gallery = "<div class='gallery-delete ".$gallery_folder_name."'><button type='button' class='delete-button' id='delete__".$gallery_folder_name."'>delete gallery</button></div>";
