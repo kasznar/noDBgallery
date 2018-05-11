@@ -18,19 +18,16 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
 </head>
 <body>
 
-<div  class="overlay" id="add-img-overlay">
-	<div class="wrapper">
-		<div class="add-image-container">
-		 dikkazzz
-		</div> <!-- add image container-->
-	</div> <!-- add image wrapper -->
-</div> <!--add image overlay -->
-
 
 <div class="wrapper">
 	<div class="header">
-		<input type="text" id="newGalleryName">
-		<button type="button" id="newGalleryButton">New Gallery!</button>
+		<div id="title">
+			noDBgallery
+		</div>
+		<div id="new-gallery-controls">
+			<input type="text" id="newGalleryName">
+			<button type="button" id="newGalleryButton">New Gallery!</button>
+		</div>
 	</div>
 	
 	<center>ctrl click images to select</center>

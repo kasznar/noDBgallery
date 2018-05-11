@@ -6,6 +6,12 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
 
 $this_gallery_folder_name = trim($_POST['gallery_folder_name']);
 $dirname = "galleries/".$this_gallery_folder_name."/thumb-img/";
+
+if (!file_exists($dirname)) {
+	die("There's no gallery named: ".$this_gallery_folder_name);
+}
+
+
 $abs_link = str_replace("\\",'/',"http://".$_SERVER['HTTP_HOST'].substr(getcwd(),strlen($_SERVER['DOCUMENT_ROOT'])));
 
 $images = scandir($dirname);

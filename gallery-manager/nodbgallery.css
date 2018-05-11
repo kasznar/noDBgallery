@@ -17,7 +17,6 @@ div.nodbgallery{
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
-
 .gallery-overlay{
 	background-color: rgb(51, 51, 51);
 	position: fixed;
@@ -28,7 +27,6 @@ div.nodbgallery{
 	display: none;
 	z-index: 666;
 }
-
 .gallery-container{
 	/*background-color: red;*/
 	display: inline-block;
@@ -39,4 +37,8 @@ div.nodbgallery{
 .gallery-wrapper{
 	/*background-color: blue;*/
 	text-align: center;
+}
+#big-img{
+	max-width: 95vw;
+    max-height: 90vh;
 }
