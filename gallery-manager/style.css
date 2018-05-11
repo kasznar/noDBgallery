@@ -155,5 +155,11 @@ img:hover {
 	border-color: #fa5788 !important;
 }
 .tag{
-	color: #8c0032;
+	color: black;
+	text-align:center;
+	padding-bottom: 5px;
+	background-color:#e754862b;
+	margin-bottom:5px;
+	margin-left:70px;
+	margin-right:70px;
 }

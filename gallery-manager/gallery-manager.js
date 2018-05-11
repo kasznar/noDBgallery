@@ -127,6 +127,7 @@ $(document).ready(function(){
 			posted_gallery_name: new_gallery_name 
 		}, function(data){
 			listGalleries();
+			new_gallery_off();
 		});
     }); /*new gallery button clicked*/
 
