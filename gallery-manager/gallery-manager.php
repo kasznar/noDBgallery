@@ -27,22 +27,13 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
 		</div>
 </div> <!-- header -->
 
-<div class="pop-up-menu" id="new-gallery-pop-up">	
+<div class="pop-up-menu" id="new-gallery-pop-up">
 	Gallery name <br>
 	<input type="text" id="newGalleryName"> <br>
-	<!--
-	<div id="new gallery controls">
-		<div id="spacer">dikk</div>
-		<div class="button" onclick="" id="newGalleryButton">
-			<p>Create</p>
-		</div>
-		<div class="button" onclick="" id="newGalleryButton">
-			<p>Cancel</p>
-		</div>
+	<div class="new-gallery-buttons-container">
+		<button type="button" class="red-button" id="newGalleryButton">Create</button>
+		<button type="button" class="blue-button" onclick="new_gallery_off()">Cancel</button>
 	</div>
-	-->
-	<button type="button" id="newGalleryButton">Create</button>
-	<button type="button" onclick="new_gallery_off()">Cancel</button>
 </div>
 
 <div class="wrapper">	
