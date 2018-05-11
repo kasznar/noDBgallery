@@ -27,7 +27,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
 			$row = "<div class='galleries ".$rowClass."' id='".$gallery_folder_name."'>".$gallery_name."</div>";
 			$container = "<div class='gallery-container ".$gallery_folder_name."'>";
 			$tag = '
-			<div> insert to website: <br> 
+			<div class="tag"> insert to website: <br> 
 			&lt;div class="nodbgallery" id="'.$gallery_folder_name.'" &gt;&lt;/div&gt;
 			</div>';
 			$controls = "<div class='gallery-controls ".$gallery_folder_name."'></div>";

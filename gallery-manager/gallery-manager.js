@@ -55,6 +55,14 @@ function removeDeletedGallery(this_gallery_to_remove){
 	$(".gallery-wrapper."+this_gallery_to_remove).hide();
 }
 
+function new_gallery_on() {
+	$("#new-gallery-pop-up").slideDown(300);
+}
+
+function new_gallery_off() {
+	$("#new-gallery-pop-up").slideUp(300);
+}
+
 //detecting ctrl press
 var cntrlIsPressed = false;
 
@@ -76,7 +84,7 @@ $(document).ready(function(){
 	$(".gallery-list-container").on("click", ".galleries" , function(){
         var this_gallery_id = $(this).attr('id'); 
 
-        var galleryTxt = '<form action="upload.php" id="form__'+this_gallery_id+'" method="post" enctype="multipart/form-data">Select image to upload:<input type="file" name="fileToUpload" id="file__'+this_gallery_id+'"><input type="submit" id="button__'+this_gallery_id+'" value="Upload Image" name="submit"><input type="hidden" name="galleryID" value="'+this_gallery_id+'"></form>';
+        var galleryTxt = '<form action="upload.php" id="form__'+this_gallery_id+'" method="post" enctype="multipart/form-data"><input type="file" value="Select Images" name="fileToUpload" id="file__'+this_gallery_id+'"><input type="submit" id="button__'+this_gallery_id+'" value="Upload Image" name="submit"><input type="hidden" name="galleryID" value="'+this_gallery_id+'"></form>';
         $(".gallery-controls."+this_gallery_id).html(galleryTxt);
 
         listGalleryImages(this_gallery_id);
