@@ -52,7 +52,7 @@ function deleteGallery(this_gallery_to_delete){
 }
 
 function removeDeletedGallery(this_gallery_to_remove){
-	$(".gallery-wrapper."+this_gallery_to_remove).hide();
+	$(".gallery-wrapper."+this_gallery_to_remove).slideUp();
 }
 
 function new_gallery_on() {
@@ -83,22 +83,24 @@ $(document).ready(function(){
 
 	$(".gallery-list-container").on("click", ".galleries" , function(){
         var this_gallery_id = $(this).attr('id'); 
-
+/*
         var galleryTxt = '<form action="upload.php" id="form__'+this_gallery_id+'" method="post" enctype="multipart/form-data"><input type="file" value="Select Images" name="fileToUpload" id="file__'+this_gallery_id+'"><input type="submit" id="button__'+this_gallery_id+'" value="Upload Image" name="submit"><input type="hidden" name="galleryID" value="'+this_gallery_id+'"></form>';
-        $(".gallery-controls."+this_gallery_id).html(galleryTxt);
-
+		$(".gallery-controls."+this_gallery_id).html(galleryTxt);
+*/
         listGalleryImages(this_gallery_id);
 
         $(".gallery-container."+this_gallery_id).slideToggle(); //the slide down has the ID as a CLASS
 
         ajaxUploadHandler(this_gallery_id);
-
-        $('.delete-button').click(function(){
-    		var toDelete = $(this).attr('id').substring(8);
-    		deleteGallery(toDelete);
-    		removeDeletedGallery(toDelete);
-    	});
     }); //click on gallery
+
+	$('.gallery-list-container').on('click', '.delete-button', function() {
+    	if (confirm("Delete gallery?")) {
+				var toDelete = $(this).attr('id').substring(8);
+    			deleteGallery(toDelete);
+    			removeDeletedGallery(toDelete);
+			}
+	});
 
     $('body').on('click', 'img', function() {
     	if (cntrlIsPressed) {
@@ -107,17 +109,18 @@ $(document).ready(function(){
 	});
 
 	$('body').on('click', '.img-delete-button', function() {
-    	$( ".selected-img" ).each(function() {
-  			var this_img_to_delete = $(this).attr('src');
-  			$(this).hide();
+		if (confirm("Delete images?")) {
+    		$( ".selected-img" ).each(function() {
+  				var this_img_to_delete = $(this).attr('src');
+  				$(this).hide();
 
-  			$.post('delete-img.php',{
-				img_to_delete: this_img_to_delete
-			}, function(data){
-				console.log(data);
+  				$.post('delete-img.php',{
+					img_to_delete: this_img_to_delete
+				}, function(data){
+					console.log(data);
+				});
 			});
-
-		});
+		}
 	});
 
     $('#newGalleryButton').click(function(){
@@ -130,6 +133,10 @@ $(document).ready(function(){
 			new_gallery_off();
 		});
     }); /*new gallery button clicked*/
+
+    $('.reminder').click(function(){
+    	$(this).fadeOut();
+    });
 
 });/*document ready*/
 

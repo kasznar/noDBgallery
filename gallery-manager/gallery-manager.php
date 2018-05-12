@@ -18,11 +18,16 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
 </head>
 <body>
 
+
+<div class="reminder">
+	ctrl click images to select
+</div>
+
 <div class="header">
 		<div id="title-text">
 			<p>noDBgallery</p>
 		</div>
-		<div class="button" onclick="new_gallery_on()">
+		<div class="button red-button" onclick="new_gallery_on()">
 			<p>New Gallery</p>
 		</div>
 </div> <!-- header -->
@@ -37,7 +42,6 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
 </div>
 
 <div class="wrapper">	
-	<center>ctrl click images to select</center>
 	<div class="gallery-list-container">
 		<!--galleries listed here-->
 	</div>
