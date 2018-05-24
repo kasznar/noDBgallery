@@ -7,7 +7,7 @@ $(document).ready(function(){
 	//insert gallery images
 	$( ".nodbgallery" ).each(function() {
   		var this_gallery_folder_name = $(this).attr('id');
-  		$.post('gallery-manager/list-gallery-images.php',{
+  		$.post('gallery-manager/gallery-inserter.php',{
 			gallery_folder_name: this_gallery_folder_name
 		}, function(data){
 			$("#"+this_gallery_folder_name).html(data);
