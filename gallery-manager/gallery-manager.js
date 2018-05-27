@@ -32,6 +32,8 @@ function ajaxUploadHandler(gallery_id){
   			if (xhr.status === 200) {
    			 // File(s) uploaded.
    			 console.log('uploaded');
+   			 var resp = xhr.response;
+   			 console.log(resp);
    			 listGalleryImages(gallery_id);
   			} else {
    			 console.log('something went wrong whit the upload :(');
